@@ -7,7 +7,9 @@
       "Bash(git commit:*)",
       "Bash(git branch:*)",
       "Bash(git push:*)",
-      "Bash(\"/c/Users/alexa/.config/herd/bin/php84.bat\" artisan migrate)"
+      "Bash(\"/c/Users/alexa/.config/herd/bin/php84.bat\" artisan migrate)",
+      "Bash(\"/c/Users/alexa/.config/herd/bin/php84.bat\" artisan twoclicks:reset --force)",
+      "Bash(/c/Users/alexa/.config/herd/bin/php84.bat:*)"
     ]
   }
 }
