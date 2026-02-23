@@ -23,7 +23,7 @@ class TwoClicksSeeder extends Seeder
         // Usuário
         DB::table('users')->insert([
             'person_id'  => $personId,
-            'email'      => 'alex@twoclicks.com',
+            'email'      => 'alex@twoclicks.com.br',
             'password'   => Hash::make('Alex1985@'),
             'order'      => 1,
             'status'     => true,
