@@ -1,6 +1,6 @@
 # TwoClicks v2 — Contexto do Projeto
 
-**Última atualização:** 23/02/2026
+**Última atualização:** 23/02/2026 (sessão 2)
 
 ---
 
@@ -297,6 +297,37 @@ Organizadas em `database/migrations/global/`:
 
 Rota: `Route::get('/painel', fn () => view('system.twoclicks.index'))`
 
+### 6.7 Autenticação
+
+| Arquivo | Conteúdo |
+|---------|----------|
+| `app/Global/Controllers/AuthController.php` | Login, logout (POST) |
+| `app/Global/Models/Person.php` | Model com SoftDeletes, conexão global |
+| `app/Models/User.php` | Authenticatable, conexão global, relação com Person |
+
+Rotas:
+- `GET /login` → formulário
+- `POST /login` → autenticação
+- `POST /logout` → logout
+- `/painel` protegido por middleware `auth`
+
+Credenciais: `alex@twoclicks.com` / `Alex1985@`
+
+### 6.8 Estrutura de Diretórios (app/)
+
+```
+app/
+├── Global/
+│   ├── Controllers/
+│   │   └── AuthController.php
+│   └── Models/
+│       └── Person.php
+├── Models/
+│   └── User.php (mantido aqui por causa do config/auth.php)
+├── Platform/   (futuro)
+└── Tenant/     (futuro)
+```
+
 ---
 
 ## 7. Dados de Seed
@@ -312,8 +343,8 @@ Rota: `Route::get('/painel', fn () => view('system.twoclicks.index'))`
 
 ## 8. Próximos Passos
 
-- [ ] Models (Eloquent)
-- [ ] Sistema de autenticação
+- [x] Models (Eloquent) — Person e User
+- [x] Sistema de autenticação
 - [ ] Painel de Gerenciamento de Módulos (Fase 14)
 - [ ] Sistema modular dinâmico (DynamicModel, DynamicService, DynamicController)
 - [ ] Migrar arquitetura SmartClick360 para TwoClicks
