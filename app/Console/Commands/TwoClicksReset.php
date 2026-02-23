@@ -24,6 +24,7 @@ class TwoClicksReset extends Command
 
         // 1. Drop dos 3 schemas
         $this->warn('1/5 — Dropando schemas (production, sandbox, log)...');
+        DB::statement('DROP SCHEMA IF EXISTS public CASCADE');
         DB::statement('DROP SCHEMA IF EXISTS production CASCADE');
         DB::statement('DROP SCHEMA IF EXISTS sandbox CASCADE');
         DB::statement('DROP SCHEMA IF EXISTS log CASCADE');

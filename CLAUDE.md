@@ -91,11 +91,19 @@ TwoClicks (global)
 'global' => [
     'driver'   => 'pgsql',
     'database' => env('DB_DATABASE', 'tc_main'),
-    'schema'   => 'public',
+    'search_path' => 'production',
 ]
 ```
 
 `.env`: `DB_CONNECTION=global`
+
+### Estratégia de Schemas (tc_main)
+
+| Schema | Finalidade |
+|--------|-----------|
+| production | Dados reais do sistema (search_path padrão) |
+| sandbox | Espelho do production para testes |
+| log | Auditoria (tabela audit_logs) |
 
 ---
 
@@ -165,6 +173,14 @@ TwoClicks (global)
 - cache (key, value, expiration)
 - jobs (id, queue, payload, attempts, etc.)
 
+### 4.4 Tabela de Auditoria (schema log)
+
+#### audit_logs (11 campos)
+- id, user_id, action, table_name, record_id
+- old_values (JSON nullable), new_values (JSON nullable)
+- status_code, ip_address (nullable), user_agent (nullable)
+- created_at (sem updated_at, sem softDeletes)
+
 ---
 
 ## 5. Padrões de Desenvolvimento
@@ -190,7 +206,11 @@ Campo `origin` presente em modules, module_fields, module_fields_ui, module_seed
 
 ## 6. O Que Já Foi Construído
 
-### 6.1 Migrations (12 arquivos)
+### 6.1 Migrations
+
+Organizadas em `database/migrations/global/`:
+
+#### production/ e sandbox/ (12 arquivos idênticos)
 
 | # | Arquivo | Tabela |
 |---|---------|--------|
@@ -207,17 +227,28 @@ Campo `origin` presente em modules, module_fields, module_fields_ui, module_seed
 | 9 | 2026_02_23_000009_create_users_table | users |
 | 10 | 2026_02_23_000010_create_personal_access_tokens_table | personal_access_tokens |
 
+#### log/ (1 arquivo)
+
+| # | Arquivo | Tabela |
+|---|---------|--------|
+| 11 | 2026_02_23_000011_create_audit_logs_table | audit_logs |
+
 ### 6.2 Seeders (1 arquivo)
 
 - `database/seeders/TwoClicksSeeder.php` — Cria pessoa (Alex Bethel) + usuário (alex@twoclicks.com / Alex1985@) + módulo Modules (id=1)
 
-### 6.3 Comandos Artisan (1 arquivo)
+### 6.3 Comandos Artisan (4 arquivos)
 
-- `app/Console/Commands/TwoClicksReset.php` — `php artisan twoclicks:reset --force` (migrate:fresh + TwoClicksSeeder)
+| Comando | Arquivo | O que faz |
+|---------|---------|-----------|
+| `twoclicks:reset --force` | TwoClicksReset.php | Drop public + 3 schemas, recria production/sandbox/log |
+| `twoclicks:reset-production --force` | TwoClicksResetProduction.php | Drop + recria só production |
+| `twoclicks:reset-sandbox --force` | TwoClicksResetSandbox.php | Drop + recria só sandbox |
+| `twoclicks:reset-log --force` | TwoClicksResetLog.php | Drop + recria só log |
 
 ### 6.4 Configurações
 
-- `config/database.php` — Conexão `global` adicionada (PostgreSQL, banco tc_main)
+- `config/database.php` — Conexão `global` adicionada (PostgreSQL, banco tc_main, search_path: production)
 - `config/app.php` — Timezone alterado para America/Sao_Paulo
 - `.env` — DB_CONNECTION=global, DB_DATABASE=tc_main, DB_PASSWORD=Millena2012@
 
