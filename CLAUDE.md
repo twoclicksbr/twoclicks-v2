@@ -1,6 +1,6 @@
 # TwoClicks v2 — Contexto do Projeto
 
-**Última atualização:** 23/02/2026 (sessão 2)
+**Última atualização:** 23/02/2026 (sessão 3)
 
 ---
 
@@ -75,7 +75,7 @@ TwoClicks (global)
 | Assets | `public/site/assets/` (css, js, img) |
 | Vendor | `public/site/vendor/` (css, js) |
 | Rota | `Route::get('/', fn () => view('site.home'))` |
-| Modais | Sobre, Bethel360, SmartClick360, ClickBank, WhatsPanel, Contato, Login |
+| Modais | Sobre, Bethel360, SmartClick360, ClickBank, WhatsPanel, Contato |
 
 ### Assets do Sistema (Painel)
 
@@ -269,7 +269,7 @@ Organizadas em `database/migrations/global/`:
 - `config/app.php` — Timezone alterado para America/Sao_Paulo
 - `.env` — DB_CONNECTION=global, DB_DATABASE=tc_main, DB_PASSWORD=Millena2012@
 - `.env` — SESSION_DRIVER alterado para file
-- `routes/web.php` — Rota principal apontando para site.home
+- `routes/web.php` — Landing page (/), auth (login/logout), sistema (/painel com middleware auth)
 
 ### 6.5 Landing Page (7 arquivos Blade)
 
@@ -279,7 +279,7 @@ Organizadas em `database/migrations/global/`:
 | head.blade.php | Meta tags + CSS |
 | header.blade.php | Menu de navegação (Sobre, Bethel360, SmartClick360, ClickBank, WhatsPanel, Contato, Login) |
 | footer.blade.php | Rodapé |
-| modal.blade.php | 7 modais (Sobre, Bethel360, SmartClick360, ClickBank, WhatsPanel, Contato, Login) |
+| modal.blade.php | 6 modais (Sobre, Bethel360, SmartClick360, ClickBank, WhatsPanel, Contato) |
 | btn-close.blade.php | Botão de fechar modal |
 | script.blade.php | JS + randomização do slider |
 
