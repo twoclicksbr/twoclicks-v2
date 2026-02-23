@@ -18,7 +18,9 @@
       "Bash(/c/Users/alexa/.config/herd/bin/php84 artisan view:clear:*)",
       "Bash(/c/Users/alexa/.config/herd/bin/php84 artisan cache:clear:*)",
       "Bash(/c/Users/alexa/.config/herd/bin/php84/php.exe artisan view:clear:*)",
-      "Bash(/c/Users/alexa/.config/herd/bin/php84/php.exe artisan cache:clear)"
+      "Bash(/c/Users/alexa/.config/herd/bin/php84/php.exe artisan cache:clear)",
+      "Bash(/c/Users/alexa/AppData/Roaming/herd-lite/bin/php8.4.exe artisan twoclicks:reset:*)",
+      "Bash(/c/Users/alexa/.config/herd/bin/php84/php.exe artisan twoclicks:reset --force)"
     ]
   }
 }
