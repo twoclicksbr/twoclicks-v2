@@ -1,5 +1,12 @@
 @extends('system.twoclicks.layouts.app')
 
+@section('breadcrumb')
+    <li class="breadcrumb-item">
+        <i class="ki-outline ki-right fs-7 text-gray-700 mx-n1"></i>
+    </li>
+    <li class="breadcrumb-item text-white fw-bold lh-1">Principal</li>
+@endsection
+
 @section('content')
     <div id="kt_app_content" class="app-content flex-column-fluid">
         <!--begin::Row-->

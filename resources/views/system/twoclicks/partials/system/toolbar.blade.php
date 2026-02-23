@@ -21,6 +21,7 @@
                     <!--end::Item-->
                     <!--begin::Item-->
                     <li class="breadcrumb-item text-white fw-bold lh-1">Dashboards</li>
+                    @yield('breadcrumb')
                     <!--end::Item-->
                 </ul>
                 <!--end::Breadcrumb-->
@@ -32,10 +33,9 @@
                 <div class="page-title me-5">
                     <!--begin::Title-->
                     <h1 class="page-heading d-flex text-white fw-bold fs-2 flex-column justify-content-center my-0">
-                        Welcome back, Amanda
+                        Bem-vindo, {{ Auth::user()->person->first_name }}
                         <!--begin::Description-->
-                        <span class="page-desc text-gray-600 fw-semibold fs-6 pt-3">Your are #1 seller
-                            across market’s Marketing Category</span>
+                        <span class="page-desc text-gray-600 fw-semibold fs-6 pt-3">Seu painel de gerenciamento</span>
                         <!--end::Description-->
                     </h1>
                     <!--end::Title-->
