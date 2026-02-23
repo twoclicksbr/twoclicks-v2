@@ -235,7 +235,7 @@ Organizadas em `database/migrations/global/`:
 
 ### 6.2 Seeders (1 arquivo)
 
-- `database/seeders/TwoClicksSeeder.php` — Cria pessoa (Alex Bethel) + usuário (alex@twoclicks.com / Alex1985@) + módulo Modules (id=1)
+- `database/seeders/TwoClicksSeeder.php` — Cria pessoa (Alex Alves de Almeida) + usuário (alex@twoclicks.com / Alex1985@)
 
 ### 6.3 Comandos Artisan (4 arquivos)
 
@@ -260,16 +260,13 @@ Organizadas em `database/migrations/global/`:
 
 | Tabela | Registro |
 |--------|----------|
-| people | Alex Bethel (id=1) |
+| people | Alex Alves de Almeida (id=1) |
 | users | alex@twoclicks.com / Alex1985@ (person_id=1) |
-| modules | Módulos (id=1, slug=modules, scope=global) |
 
 ---
 
 ## 8. Próximos Passos
 
-- [ ] Seeder module_fields do módulo Modules
-- [ ] Seeder module_fields_ui do módulo Modules
 - [ ] Models (Eloquent)
 - [ ] Sistema de autenticação
 - [ ] Painel de Gerenciamento de Módulos (Fase 14)

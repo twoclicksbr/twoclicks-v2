@@ -30,35 +30,5 @@ class TwoClicksSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-
-        // === Módulo: Modules ===
-        DB::table('modules')->insert([
-            'name'                   => 'Módulos',
-            'slug'                   => 'modules',
-            'type'                   => 'module',
-            'scope'                  => 'global',
-            'icon'                   => null,
-            'model'                  => 'Module',
-            'service'                => 'ModuleService',
-            'controller'             => 'ModuleController',
-            'show_drag'              => true,
-            'show_checkbox'          => true,
-            'show_actions'           => true,
-            'default_sort_field'     => 'id',
-            'default_sort_direction' => 'asc',
-            'per_page'               => 25,
-            'view_index'             => null,
-            'view_show'              => null,
-            'view_modal'             => null,
-            'after_store'            => 'index',
-            'after_update'           => 'index',
-            'after_restore'          => 'edit',
-            'default_checked'        => false,
-            'origin'                 => 'system',
-            'order'                  => 1,
-            'status'                 => true,
-            'created_at'             => now(),
-            'updated_at'             => now(),
-        ]);
     }
 }
