@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->string('type', 20)->default('module');           // module, submodule, pivot
-            $table->string('scope');                                  // tenant, landlord (obrigatório, sem default)
+            $table->string('scope');                                  // global, platform, tenant (obrigatório, sem default)
             $table->string('icon')->nullable();                      // Classe do ícone (KTIcons)
             $table->string('model')->nullable();                     // Nome da classe Model (sem namespace)
             $table->string('service')->nullable();                   // Nome da classe Service (sem namespace)

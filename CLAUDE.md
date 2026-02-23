@@ -104,7 +104,7 @@ TwoClicks (global)
 ### 4.1 Tabelas do Sistema Modular (7 tabelas)
 
 #### modules (27 campos)
-- id, name, slug (unique), type (default 'module'), scope (obrigatório: tenant/landlord)
+- id, name, slug (unique), type (default 'module'), scope (obrigatório: global/platform/tenant)
 - icon (nullable), model (nullable), service (nullable), controller (nullable)
 - show_drag (true), show_checkbox (true), show_actions (true)
 - default_sort_field ('id'), default_sort_direction ('asc'), per_page (25)
@@ -209,7 +209,7 @@ Campo `origin` presente em modules, module_fields, module_fields_ui, module_seed
 
 ### 6.2 Seeders (1 arquivo)
 
-- `database/seeders/TwoClicksSeeder.php` — Cria pessoa (Alex Bethel) + usuário (alex@twoclicks.com / 12345678)
+- `database/seeders/TwoClicksSeeder.php` — Cria pessoa (Alex Bethel) + usuário (alex@twoclicks.com / Alex1985@) + módulo Modules (id=1)
 
 ### 6.3 Comandos Artisan (1 arquivo)
 
@@ -218,6 +218,7 @@ Campo `origin` presente em modules, module_fields, module_fields_ui, module_seed
 ### 6.4 Configurações
 
 - `config/database.php` — Conexão `global` adicionada (PostgreSQL, banco tc_main)
+- `config/app.php` — Timezone alterado para America/Sao_Paulo
 - `.env` — DB_CONNECTION=global, DB_DATABASE=tc_main, DB_PASSWORD=Millena2012@
 
 ---
@@ -230,12 +231,14 @@ Campo `origin` presente em modules, module_fields, module_fields_ui, module_seed
 |--------|----------|
 | people | Alex Bethel (id=1) |
 | users | alex@twoclicks.com / Alex1985@ (person_id=1) |
+| modules | Módulos (id=1, slug=modules, scope=global) |
 
 ---
 
 ## 8. Próximos Passos
 
-- [ ] Seeder de module_actions (6 ações padrão)
+- [ ] Seeder module_fields do módulo Modules
+- [ ] Seeder module_fields_ui do módulo Modules
 - [ ] Models (Eloquent)
 - [ ] Sistema de autenticação
 - [ ] Painel de Gerenciamento de Módulos (Fase 14)
