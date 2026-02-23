@@ -67,11 +67,28 @@ TwoClicks (global)
 | Servidor Local | Laravel Herd |
 | Controle de Versão | Git + GitHub |
 
+### Landing Page (Site Institucional)
+
+| Item | Detalhe |
+|------|---------|
+| Views | `resources/views/site/` (7 arquivos Blade) |
+| Assets | `public/site/assets/` (css, js, img) |
+| Vendor | `public/site/vendor/` (css, js) |
+| Rota | `Route::get('/', fn () => view('site.home'))` |
+| Modais | Sobre, Bethel360, SmartClick360, ClickBank, WhatsPanel, Contato, Login |
+
+### Assets do Sistema (Painel)
+
+| Item | Caminho |
+|------|---------|
+| Metronic Demo 34 | `public/system/metronic8/demo34/assets/` |
+
 ### Caminhos Locais
 
 - **Projeto Laravel:** `C:\Herd\twoclicks-v2`
 - **Metronic (SOMENTE LEITURA):** `C:\Herd\themeforest\metronic\demo34`
 - **URL local:** `http://twoclicks-v2.test`
+- **Assets Sistema:** `public/system/metronic8/demo34/assets/`
 
 ---
 
@@ -251,6 +268,20 @@ Organizadas em `database/migrations/global/`:
 - `config/database.php` — Conexão `global` adicionada (PostgreSQL, banco tc_main, search_path: production)
 - `config/app.php` — Timezone alterado para America/Sao_Paulo
 - `.env` — DB_CONNECTION=global, DB_DATABASE=tc_main, DB_PASSWORD=Millena2012@
+- `.env` — SESSION_DRIVER alterado para file
+- `routes/web.php` — Rota principal apontando para site.home
+
+### 6.5 Landing Page (7 arquivos Blade)
+
+| Arquivo | Função |
+|---------|--------|
+| home.blade.php | Layout principal (slider + includes) |
+| head.blade.php | Meta tags + CSS |
+| header.blade.php | Menu de navegação (Sobre, Bethel360, SmartClick360, ClickBank, WhatsPanel, Contato, Login) |
+| footer.blade.php | Rodapé |
+| modal.blade.php | 7 modais (Sobre, Bethel360, SmartClick360, ClickBank, WhatsPanel, Contato, Login) |
+| btn-close.blade.php | Botão de fechar modal |
+| script.blade.php | JS + randomização do slider |
 
 ---
 
