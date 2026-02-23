@@ -9,7 +9,7 @@
                 <ul class="breadcrumb breadcrumb-separatorless fw-semibold">
                     <!--begin::Item-->
                     <li class="breadcrumb-item text-white fw-bold lh-1">
-                        <a href="index.html" class="text-white text-hover-primary">
+                        <a href="{{ route('dashboard.main') }}" class="text-white text-hover-primary">
                             <i class="ki-outline ki-home text-gray-700 fs-6"></i>
                         </a>
                     </li>
