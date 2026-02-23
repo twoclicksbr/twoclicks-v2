@@ -287,15 +287,24 @@ Organizadas em `database/migrations/global/`:
 
 | Caminho | Conteúdo |
 |---------|----------|
-| `resources/views/system/twoclicks/index.blade.php` | Página principal do painel |
-| `resources/views/system/twoclicks/partials/head.blade.php` | Meta tags + CSS |
-| `resources/views/system/twoclicks/partials/theme.blade.php` | Script de tema claro/escuro |
-| `resources/views/system/twoclicks/partials/header.blade.php` | Navbar/menu topo |
-| `resources/views/system/twoclicks/partials/footer.blade.php` | Scripts JS |
-| `resources/views/system/twoclicks/partials/drawers/` | Painéis laterais (activities, etc.) |
-| `resources/views/system/twoclicks/partials/modals/` | Modais do sistema (upgrade-plan, etc.) |
+| `resources/views/system/twoclicks/layouts/app.blade.php` | Layout master (@yield content) |
+| `resources/views/system/twoclicks/layouts/auth.blade.php` | Layout de autenticação (limpo) |
+| `resources/views/system/twoclicks/dashboard.blade.php` | Dashboard (@extends app) |
+| `resources/views/system/twoclicks/login.blade.php` | Página de login (@extends auth) |
+| `resources/views/system/twoclicks/partials/system/head.blade.php` | Meta tags + CSS do painel |
+| `resources/views/system/twoclicks/partials/system/theme.blade.php` | Script de tema claro/escuro |
+| `resources/views/system/twoclicks/partials/system/header.blade.php` | Navbar/menu topo |
+| `resources/views/system/twoclicks/partials/system/toolbar.blade.php` | Toolbar |
+| `resources/views/system/twoclicks/partials/system/footer.blade.php` | Scripts JS |
+| `resources/views/system/twoclicks/partials/system/drawers/` | Painéis laterais (activities, chat, etc.) |
+| `resources/views/system/twoclicks/partials/system/modals/` | Modais do sistema (upgrade-plan, etc.) |
+| `resources/views/system/twoclicks/partials/auth/head.blade.php` | Meta tags + CSS do auth |
+| `resources/views/system/twoclicks/partials/auth/theme.blade.php` | Script de tema auth |
+| `resources/views/system/twoclicks/partials/auth/script.blade.php` | Scripts JS do auth |
 
-Rota: `Route::get('/painel', fn () => view('system.twoclicks.index'))`
+Rotas:
+- `GET /painel` → dashboard (protegido por middleware `auth`)
+- `GET /login` → formulário de login
 
 ### 6.7 Autenticação
 
