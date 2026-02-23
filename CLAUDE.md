@@ -283,6 +283,20 @@ Organizadas em `database/migrations/global/`:
 | btn-close.blade.php | Botão de fechar modal |
 | script.blade.php | JS + randomização do slider |
 
+### 6.6 Layout do Painel (Metronic Demo 34)
+
+| Caminho | Conteúdo |
+|---------|----------|
+| `resources/views/system/twoclicks/index.blade.php` | Página principal do painel |
+| `resources/views/system/twoclicks/partials/head.blade.php` | Meta tags + CSS |
+| `resources/views/system/twoclicks/partials/theme.blade.php` | Script de tema claro/escuro |
+| `resources/views/system/twoclicks/partials/header.blade.php` | Navbar/menu topo |
+| `resources/views/system/twoclicks/partials/footer.blade.php` | Scripts JS |
+| `resources/views/system/twoclicks/partials/drawers/` | Painéis laterais (activities, etc.) |
+| `resources/views/system/twoclicks/partials/modals/` | Modais do sistema (upgrade-plan, etc.) |
+
+Rota: `Route::get('/painel', fn () => view('system.twoclicks.index'))`
+
 ---
 
 ## 7. Dados de Seed
