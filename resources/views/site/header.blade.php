@@ -40,7 +40,7 @@
                         <a class="nav-link scroll" data-fancybox="" data-src="#modal-contact">Contato</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#">Login</a>
+                        <a class="nav-link scroll" data-fancybox="" data-src="#modal-login">Login</a>
                     </li>
                 </ul>
             </nav>

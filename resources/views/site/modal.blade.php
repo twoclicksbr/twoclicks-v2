@@ -229,7 +229,45 @@
                             <i class="fab fa-email" style="margin-right: 10px"></i>
                             E-mail
                         </a>
-                        
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="slide-modal-window" id="modal-login" style="display: none">
+    <div class="container">
+        @include('site.btn-close')
+
+        <div class="row">
+            <div class="col-12 col-md-7 modal-img-area">
+                <img src="{{ asset('site/assets/img/img6-big.jpg') }}" alt="Login">
+            </div>
+            <div class="col-12 col-md-5 modal-des-area d-flex justify-content-center align-items-center">
+                <div class="modal-inner-description">
+
+                    <h4 class="slide-heading">Login</h4>
+                    <h6 class="slide-subheading"><b>Acesse sua conta</b></h6>
+
+                    <p class="slide-des">
+                        Entre com suas credenciais para acessar o painel.
+                    </p>
+
+                    <div class="mt-3">
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="E-mail" />
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" placeholder="Senha" />
+                        </div>
+                    </div>
+
+                    <div class="modal-actions mt-3">
+                        <a href="#" class="btn slide-btn">Entrar</a>
                     </div>
 
                 </div>
